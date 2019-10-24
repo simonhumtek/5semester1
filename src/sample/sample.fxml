@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="277.0" prefWidth="423.0">
+         <children>
+            <TextField fx:id="stat1" layoutX="7.0" layoutY="52.0" />
+            <TextField fx:id="stat2" layoutX="7.0" layoutY="91.0" />
+            <TextField fx:id="time" layoutX="7.0" layoutY="126.0" />
+            <TextArea fx:id="res" layoutX="163.0" layoutY="27.0" prefHeight="200.0" prefWidth="200.0" />
+            <Button layoutX="24.0" layoutY="151.0" mnemonicParsing="false" onAction="#RouteHandler" text="Find Route" />
+            <ComboBox fx:id="stat3" layoutX="7.0" layoutY="202.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
