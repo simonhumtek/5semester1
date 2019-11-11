@@ -5,6 +5,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javax.swing.*;
+import java.util.ArrayList;
 
 
 public class Controller {
@@ -19,6 +20,8 @@ public class Controller {
     TextArea res;
     @FXML
     ComboBox stat3;
+    @FXML
+    ComboBox stat4;
 
     @FXML
     public void initialize() {
@@ -27,6 +30,16 @@ public class Controller {
         for(String s: TrainModel.getInstance() .getStation()) {
             stat3.getItems().add(s);
         }
+
+        DatabaseHelper.connect();
+        ArrayList<String> stations = DatabaseHelper.getAllStations();
+        ArrayList<String> times = DatabaseHelper.getAllTimes();
+
+
+        System.out.println(stations);
+        System.out.println(times);
+
+
     }
     @FXML
     public void RouteHandler (ActionEvent e) {
@@ -44,6 +57,6 @@ public class Controller {
     String[] getStation() {String[] s={"København","Roskilde", "Odense"}; return s;}
     String findRoute(String stat1,String stat2, String time) {
         //make query to database - make it into a string - return string
-        return "route from"+stat1+ "\n to "+stat2+ "at" +time;
+        return "route from "+stat1+ "\n to "+stat2+ "at " +time;
     }
  }

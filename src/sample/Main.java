@@ -15,16 +15,23 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Mine Rejseplan");
+        primaryStage.setTitle("Rejsehensigten har verdens bedste Hensigt");
         primaryStage.setScene(new Scene(root, 500, 300));
         primaryStage.show();
     }
 
     trainMPS mainTrain = new trainMPS();
     Connection conn = null;
-       try {
+      // try
+
+    {
         String url = "jdbc:sqlite:C:/sqlite/SQLdatabase.db";
-        conn = mainTrain.connect(url);
+        try {
+            conn = mainTrain.connect(url);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 // con.setAutoCommit (false);
         //Select;
         // Denne kode ikke relevant da vi benytter en GUI
